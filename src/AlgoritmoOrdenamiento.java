@@ -9,10 +9,10 @@ public class AlgoritmoOrdenamiento {
     // Método de ordenamiento burbuja
     public int[] burbuja() {
         int n = arreglo.length;
-        boolean intercambio;
+        boolean isOrder;
 
         do {
-            intercambio = false;
+            isOrder = true;
 
             for (int i = 0; i < n - 1; i++) {
                 if (arreglo[i] > arreglo[i + 1]) {
@@ -20,12 +20,12 @@ public class AlgoritmoOrdenamiento {
                     arreglo[i] = arreglo[i + 1];
                     arreglo[i + 1] = temp;
 
-                    intercambio = true;
+                    isOrder = false;
                 }
             }
 
             n--;
-        } while (intercambio);
+        } while (!isOrder);
 
         return arreglo;
     }
